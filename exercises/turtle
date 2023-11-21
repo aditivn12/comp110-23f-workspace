@@ -1,0 +1,71 @@
+__author__ = "PID"
+
+from turtle import Turtle, colormode, done
+leo: Turtle = Turtle()
+
+def drawRectangle(rect: Turtle, x: float, y: float, length: float):
+    rect.penup()
+    rect.goto(x, y)
+    rect.pendown()
+    i = 0
+    while (i < 4):
+        rect.forward(length)
+        rect.right(90)
+        i = i + 1
+
+def drawTriangle(trig: Turtle, x: float, y: float, length: float):
+    trig.penup()
+    trig.goto(x, y)
+    trig.pendown()
+    i = 0
+    while (i < 3):
+        trig.forward(length)
+        trig.left(120)
+        i = i + 1
+
+def draw_square(squ: Turtle, x: float, y: float, width: float) -> None:
+    """Draw a square of the given width whose top-left corner is located at x, y."""
+    squ.penup()
+    squ.goto(x, y) 
+    squ.setheading(0.0)
+    squ.pendown()
+    i: int = 0
+    while i < 4:
+        squ.forward(width)
+        squ.right(90)
+        i = i + 1
+
+def drawPentagon(pent: Turtle, x: float, y: float, length):
+    pent.penup()
+    pent.color("blue")
+    pent.goto(x, y)
+    pent.pendown()
+    i = 0
+    while (i < 5):
+        pent.forward(length)
+        pent.right(72)
+        i = i + 1
+
+def main() -> None:
+    """The entrypoint of my scene."""
+    turtle: Turtle = Turtle()
+    drawTriangle(turtle, 200, 0, 75)
+    drawTriangle(turtle, 190, -75, 100)
+    drawTriangle(turtle, 180, -150, 125)
+    drawTriangle(turtle, 170, -225, 150)
+    drawTriangle(turtle, -200, 0, 75)
+    drawTriangle(turtle, -210, -75, 100)
+    drawTriangle(turtle, -220, -150, 125)
+    drawTriangle(turtle, -230, -225, 150)
+    drawRectangle(turtle, -190, -225, 50)
+    drawRectangle(turtle, 210, -225, 50)
+    drawPentagon(turtle, 115, -215, 25)
+    draw_square(turtle, 115, -250, 25)
+    drawPentagon(turtle, 50, -215, 25)
+    draw_square(turtle, 50, -250, 25)
+    drawPentagon(turtle, -15, -215, 25)
+    draw_square(turtle, -15, -250, 25)
+    done()
+
+if __name__ == "__main__":
+    main()
