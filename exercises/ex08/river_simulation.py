@@ -1,4 +1,7 @@
-from exercises.ex08.rivers import River
+"""File to test the river class."""
+
+
+from exercises.ex08.river import River
 
 my_river = River(10, 2)
 
